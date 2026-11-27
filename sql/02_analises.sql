@@ -128,13 +128,13 @@ ORDER BY faturamento_bruto_gbp DESC;
 
 SELECT
     customer_id,
-    country AS pais,
+    COUNT(DISTINCT country) AS quantidade_paises,
     COUNT(DISTINCT invoice_no) AS total_pedidos,
     SUM(quantity) AS unidades_compradas,
     ROUND(SUM(gross_revenue), 2) AS faturamento_associado_gbp
 FROM vw_vendas_validas
 WHERE customer_id IS NOT NULL
-GROUP BY customer_id, country
+GROUP BY customer_id
 ORDER BY faturamento_associado_gbp DESC
 LIMIT 10;
 
