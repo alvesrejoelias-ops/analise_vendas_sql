@@ -1,0 +1,19 @@
+# Ambientes Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Dados e banco gerados localmente
+data/raw/*
+!data/raw/.gitkeep
+data/online_retail.db
+data/online_retail.db-journal
+data/online_retail.db-shm
+data/online_retail.db-wal
+
+# Configurações locais
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
